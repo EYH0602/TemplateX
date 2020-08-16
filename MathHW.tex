@@ -9,15 +9,28 @@
 \usepackage[normalem]{ulem}
 
 % theorem styles
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{corollary}{Corollary}[theorem]
-\newtheorem{lemma}[theorem]{Lemma}
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
-\theoremstyle{remark}
-\newtheorem*{remark}{Remark}
+
+\newtheorem{corollary}{\bf Corollary}
+\newtheorem{definition}{\bf Definition}
+\newtheorem{proposition}{\bf Proposition}
+\newtheorem{Axiom}{\bf Axiom}
+\newtheorem{theorem}{\bf Theorem}
+\newtheorem{lemma}{\bf Lemma}
+\newtheorem{example}{\bf Example}
+\newtheorem{remark}{\bf Remark}
+\newtheorem{Algorithm}{\bf Algorithm}[section]
+\newcommand{\reff}[1]{Figure~\ref{#1}}
+\newcommand{\reftb}[1]{Table~\ref{#1}}
 
 \newcommand\round[1]{\left[#1\right]}
+
+% mathbb and mathcal often used letters
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
 % Margins
 \usepackage[top=2.5cm, left=3cm, right=3cm, bottom=4.0cm]{geometry}
 % Colour table cells
