@@ -8,6 +8,16 @@
 \usepackage{graphicx}
 \usepackage[normalem]{ulem}
 
+% theorem styles
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\newcommand\round[1]{\left[#1\right]}
 % Margins
 \usepackage[top=2.5cm, left=3cm, right=3cm, bottom=4.0cm]{geometry}
 % Colour table cells
@@ -25,44 +35,12 @@
 
 \begin{document}
 
+
 \begin{center}
     \textbf{TITLE}
 \end{center}
 
-NAME: 
-
-1. Decide which of the following represent true statements about the nature of sets.
-For any that are false, provide a specific example where the statement in question does not hold.
-
-(a) If $A_1 \supseteq A_2 \supseteq A_3 \supseteq A_4 \cdots$ are all sets containing an infinite number of elements,
-then the intersection $\bigcap\limits_{n=1}^{\infty} A_n$ is infinite as well.
-
-False.
-\begin{proof}
-    \begin{align*}
-        \text{Let } A_1              & = \{1,2,3,\ldots\}                             \\
-        A_2                          & = \{2,3,4,\ldots\}                             \\
-        \ldots                                                                        \\
-        \text{for number } m, m > n, & \text{ then } m \in \bigcap_{n=1}^{\infty} A_n \\
-        \text{and } m < m+1          & \implies m \not\in A_{m+1}                     \\
-        \implies                     & \bigcap_{n=1}^{\infty}A_n = \emptyset
-    \end{align*}
-\end{proof}
-
-(b) If $A_1 \supseteq A_2 \supseteq A_3 \supseteq A_4 \cdots$ are all finite, nonempty sets of real numbers,
-then the intersection $\bigcap\limits_{n=1}^{\infty} A_n$ is finite and nonempty.
-
-(c) $A \cap (B \cup C) = (A \cap B) \cup C$
-\begin{proof}
-    \begin{align*}
-        \text{Let set } A & = \{1,2\}                        \\
-        B                 & = \{2,3\}                        \\
-        C                 & = \{3,4\}                        \\
-        \text{then, }                                        \\
-        A \cap (B \cup C) & = \{1,2\} \cap \{2,3,4\} = \{2\} \\
-        (A \cap B) \cup C & = \{2\} \cup \{3,4\} = \{2,3,4\}
-    \end{align*}
-\end{proof}
+\textbf{NAME:} 
 
 
 \end{document}
