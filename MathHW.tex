@@ -55,5 +55,55 @@
 
 \textbf{NAME:} 
 
+\section*{Example}
+
+1. Let $y_1=6$, and for each $n\in N$ define $y_{n+1}=\frac{2y_n-6}{3}$.
+
+(a) Use induction to prove that the sequence satisfies $y_n>-6$ for all $n\in N$.
+
+\begin{proof}
+    We use induction on $n$.
+
+    \textit{Base Case}: $n=1$
+    \begin{align*}
+        y_{n+1} = y_2 = \frac{2y_1-6}{3} = 2 > -6
+    \end{align*}
+    \indent We prove the base case.
+
+    \textit{Inductive Step}: Let $k \in \N, k \geq n$, suppose $y_k > -6$,
+    \begin{align*}
+        y_{k+1} & = \frac{2y_{k}-6}{3} \\
+        & > \frac{2(-6) - 6}{3} \\
+        & > \frac{-18}{3} \\
+        & > -6
+    \end{align*}
+    \indent This proves the inductive step.
+
+    Conclude by Induction, the result holds.
+\end{proof}
+
+(b) Use another induction argument to show the sequence $(y_1,y_2,y_3,...)$ is decreasing.
+
+\begin{proof}
+    We use strong induction on $n$.
+
+    
+    \textit{Base Case}: $n=1$ and $n=2$
+    \begin{align*}
+        n=1: y_1 = 6 \\
+        n=2: y_2 = 2 < y_1
+    \end{align*}
+    \indent the base case holds.
+
+    \textit{Induction Step}: Let $k \in \N, k \geq 2$ and suppose $y_n < y_{n-1} \forall n \leq k$, then we have
+    \begin{align*}
+        y_{k+1} & = \frac{2y_k-6}{3}, y_k = \frac{2y_{k-1}-6}{3} \\
+        \implies y_{k+1} - y_k & = \frac{(2y_k-6) - (2y_{k-1}-6)}{3} \\
+        y_{k} < y(k-1) & \implies (2y_k-6) < (2y_{k-1}-6) \\
+        & \implies y_{k+1} < y_k
+    \end{align*}
+    \indent The inductive step holds. Prove by strong induction, the statement holds. \\
+\end{proof}
+
 
 \end{document}
