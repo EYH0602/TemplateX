@@ -12,7 +12,37 @@
 \usepackage[top=2.5cm, left=3cm, right=3cm, bottom=4.0cm]{geometry}
 % Colour table cells
 \usepackage[table]{xcolor}
+\usepackage{textcomp}
+\usepackage{listings}
+% allow code segment, from Overleaf
+\usepackage[utf8]{inputenc}
+%New colors defined below
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
+%Code listing style named "mystyle"
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},   commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+%"mystyle" code listing set
+\lstset{style=mystyle}
 % Get larger line spacing in table
 \newcommand{\tablespace}{\\[1.25mm]}
 \newcommand\Tstrut{\rule{0pt}{2.6ex}}         % = `top' strut
@@ -33,9 +63,49 @@
 \end{center}
 
 
-\textbf{NAME}: Ethan He
+\textbf{NAME}: 
 
 1. Express the function $n^3/1000 - 100n^2 -100n + 3$ in terms of $\bigO$-notation.
 
+\section*{Code Example}
+
+\begin{lstlisting}[language=Python, caption=Python example]
+def dfs(board, x, y):
+    if not re.search("^.E*$", board[x][y]):
+        return
+    dx = (0,0,1,1,1,-1,-1,-1)   # move in x direction
+    dy = (1,-1,0,1,-1,0,-1,1)   # move in y direction
+    count = 0;
+    
+    # find out how many is around this cell
+    for i in range(0,8):
+        newx = x+dx[i]
+        newy = y+dy[i]
+        if newx < 0 or newy < 0 or \
+            newx >= len(board) or newy >= len(board[0]):
+            continue
+        if board[newx][newy] == 'M' or board[newx][newy] == 'MF':
+            count += 1
+    # change this cell to the # of bombs around it
+    if count > 0:
+        board[x][y] = str(count)
+        return
+    
+    # draw out the region
+    board[x][y] = 'B'   # mark this pos
+    for i in range(0,8):
+        newx = x+dx[i]
+        newy = y+dy[i]
+        if newx < 0 or newy < 0\
+            or newx >= len(board) or newy >= len(board[0]):
+            continue
+        if board[newx][newy] == 'E':
+            dfs(board,newx,newy)
+\end{lstlisting}
+
+Or to to import a file
+
+\lstinputlisting[language=C++, caption=C++ sample code
+]{./Examples/Tag.h}
 
 \end{document}
