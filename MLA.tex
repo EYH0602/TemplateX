@@ -1,5 +1,5 @@
 
-\documentclass[12pt]{article}
+\documentclass{article}
 
 %
 %Margin - 1 inch on all sides
@@ -29,6 +29,13 @@
 %
 \usepackage[super]{nth}
 
+% use roman numerals for section and subsection
+\renewcommand{\thesection}{\Roman{section}} 
+\renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+
+% allow images
+\usepackage{graphicx}
+
 % set size of section title
 \usepackage{titlesec}
 \titleformat*{\section}{\normalfont\bfseries}
@@ -40,7 +47,7 @@
 \pagestyle{fancy}
 \lhead{} 
 \chead{} 
-\rhead{He \thepage} 
+\rhead{Last Name \thepage} 
 \lfoot{} 
 \cfoot{} 
 \rfoot{} 
@@ -56,8 +63,9 @@
 % - from Ryan Alcock's MLA style file
 %
 \newcommand{\bibent}{\noindent \hangindent 40pt}
+\newcommand{\annotent}{\medskip \newline}
 \newenvironment{workscited}{\newpage \begin{center} Works Cited \end{center}}{\newpage }
-
+\newenvironment{annotation}{\begin{center} Annotated Bibliography \end{center}}{\newpage }
 
 %
 %Begin document
@@ -65,14 +73,13 @@
 \begin{document}
 \begin{flushleft}
 
-% IMPOERTANT!!
+% IMPORTANT!!
 %%%%First page name, class, etc
-Your Name \\
+Name \\
 Instructor \\
-Course Name \\
+Course \\
 Date \\
 
-% title
 \begin{center}
     \textbf{TITLE}
 \end{center}
@@ -80,23 +87,26 @@ Date \\
 %%%%Changes paragraph indentation to 0.5in
 \setlength{\parindent}{0.5in}
 %%%%Begin body of paper here
-
-
+\newpage
+Picture Example
+\begin{figure}
+    \includegraphics[width=0.95\textwidth]{./Examples/boat.jpg}
+    \caption{A boat}
+    \label{fig1: Boat}
+\end{figure}
 
 %%%%Works cited
 \begin{workscited}
 
 \bibent
-Author Last Name, First Name. \textit{Reference Name} New York: Saxton, 1849. Print.
+Negr\'{o}n-Gonzales, Genevieve. ``Navigating `Illegality': Undocumented Youth \& Oppositional Consciousness.'' \textit{Children and Youth Services Review}, vol. 35, no. 8, 2013, pp. 1284-1290
 
 \bibent
-Baker, Gladys L., Wayne D. Rasmussen, Vivian Wiser, and Jane M. Porter. \textit{Century of Service: The First 100 Years of the United States Department of Agriculture.}[Federal Government], 1996. Print.
-
-\bibent
-Danhof, Clarence H. \textit{Change in Agriculture: The Northern United States, 1820-1870.} Cambridge: Harvard UP, 1969. Print.
+Spade, Dean. ``Solidarity Not Charity: Mutual Aid for Mobilization and Survival.'' \textit{Social Text}, 38.1, 2020, pp. 131-151
 
 
 \end{workscited}
+
 
 \end{flushleft}
 \end{document}
