@@ -30,6 +30,32 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\I}{\mathbb{I}}
+
+% text command
+\newcommand{\suchthat}{\text{ s.t. }}
+\newcommand{\andtext}{\text{ and }}
+\newcommand{\ortext}{\text{ or }}
+
+
+\usepackage{mathtools}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+% double indent
+\newcommand{\iindent}{\indent\indent}
 
 % Margins
 \usepackage[top=2.5cm, left=3cm, right=3cm, bottom=4.0cm]{geometry}
@@ -57,9 +83,9 @@
 
 \section*{Example}
 
-1. Let $y_1=6$, and for each $n\in N$ define $y_{n+1}=\frac{2y_n-6}{3}$.
+1. Let $y_1=6$, and for each $n\in \N$ define $y_{n+1}=\frac{2y_n-6}{3}$.
 
-(a) Use induction to prove that the sequence satisfies $y_n>-6$ for all $n\in N$.
+(a) Use induction to prove that the sequence satisfies $y_n>-6$ for all $n\in \N$.
 
 \begin{proof}
     We use induction on $n$.
