@@ -9,16 +9,27 @@
 \usepackage[normalem]{ulem}
 
 % theorem styles
-
-\newtheorem{corollary}{\bf Corollary}
-\newtheorem{definition}{\bf Definition}
-\newtheorem{proposition}{\bf Proposition}
+% with number
+\newtheorem{corollary}{\bf Corollary}[section]
+\newtheorem{definition}{\bf Definition}[section]
+\newtheorem{proposition}{\bf Proposition}[section]
 \newtheorem{Axiom}{\bf Axiom}
-\newtheorem{theorem}{\bf Theorem}
-\newtheorem{lemma}{\bf Lemma}
-\newtheorem{example}{\bf Example}
-\newtheorem{remark}{\bf Remark}
+\newtheorem{theorem}{\bf Theorem}[section]
+\newtheorem{lemma}{\bf Lemma}[section]
+\newtheorem{example}{\bf Example}[section]
+\newtheorem{remark}{\bf Remark}[section]
 \newtheorem{Algorithm}{\bf Algorithm}[section]
+\newtheorem{property}{\bf Property}[section]
+% with out number
+\newtheorem*{corollary*}{\bf Corollary}
+\newtheorem*{definition*}{\bf Definition}
+\newtheorem*{proposition*}{\bf Proposition}
+\newtheorem*{Axiom*}{\bf Axiom}
+\newtheorem*{theorem*}{\bf Theorem}
+\newtheorem*{lemma*}{\bf Lemma}
+\newtheorem*{example*}{\bf Example}
+\newtheorem*{remark*}{\bf Remark}
+\newtheorem*{Algorithm*}{\bf Algorithm}
 \newcommand{\reff}[1]{Figure~\ref{#1}}
 \newcommand{\reftb}[1]{Table~\ref{#1}}
 
@@ -69,18 +80,16 @@
 \newcommand\tstrut{\rule{0pt}{2.0ex}}         % = `top' strut
 \newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}}   % = `bottom' strut
 
-%%%%Changes paragraph indentation to 0.5in
-\setlength{\parindent}{0.25in}
-%%%%Begin body of paper here
+
+\usepackage{titling}
+\setlength{\droptitle}{-5em}   % This is your set screw
+
+\title{Title}
+\author{Author}
+\date{}
 
 \begin{document}
 
-
-\begin{center}
-    \textbf{TITLE}
-\end{center}
-
-\textbf{NAME:} 
 
 \section*{Example}
 
